@@ -5,7 +5,11 @@ export default function App() {
     <div>
       <h3>Weather App</h3>
       <footer>
-        <a href="/" target="_blank">
+        <a
+          href="https://github.com/AnzhelikaTy/react-weather-project.git"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source code
         </a>{" "}
         by Anzhelika Susemcik
