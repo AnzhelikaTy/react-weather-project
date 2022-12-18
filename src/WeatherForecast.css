@@ -1,0 +1,13 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.forecast-temperature-max {
+  font-weight: bold;
+}
+
+.forecast-temperature-min {
+  color: rgba(88, 86, 86, 0.809);
+  font-weight: 500;
+  margin-left: 5px;
+}
