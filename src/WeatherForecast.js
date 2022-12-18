@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
+
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
@@ -15,17 +17,7 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast">
         <div className="row">
           <div className="col">
-            <div className="forecast-day">{forecast[0].dt}</div>
-            Icon
-            <div className="forecast-temperatures">
-              <span className="forecast-temperature-max">
-                {Math.round(forecast[0].temperature.maximum)}°
-              </span>
-              <span className="forecast-temperature-min">
-                {" "}
-                {Math.round(forecast[0].temperature.minimum)}°
-              </span>
-            </div>
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
@@ -37,5 +29,6 @@ export default function WeatherForecast(props) {
     const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
+    return null;
   }
 }
