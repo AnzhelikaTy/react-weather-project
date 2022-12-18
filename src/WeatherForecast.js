@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./WeatherForecast.css";
+import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
@@ -29,6 +29,7 @@ export default function WeatherForecast(props) {
     const apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
+
     return null;
   }
 }
